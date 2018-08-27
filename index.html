@@ -49,13 +49,20 @@
             </div>
         </div>
         <div class="head-right">
-            
+            <ul id="menu">
+                <li data-menuanchor="page1"><a href="#page1">首页</a></li>
+                <li data-menuanchor="page2"><a href="#page2">个人信息</a></li>
+                <li data-menuanchor="page3"><a href="#page3">简介</a></li>
+                <li data-menuanchor="page4"><a href="#page4">技能树</a></li>
+                <li data-menuanchor="page5"><a href="#page5">爬坑之旅</a></li>
+                <li data-menuanchor="page6"><a href="#page6">约我吗</a></li>
+            </ul>
         </div>
     </header>
     <!-- 主要内容 -->
     <div id="fullpage" class="fullpage-wrapper" style="height: 100%; position: relative; transform: translate3d(0px, 0px, 0px); transition: all 700ms ease">
         <!-- 第一屏 首页 -->
-        <div class="section section1 fp-section fp-table fp-auto-height-responsive" data-anchor="page1">
+        <div class="section section1 fp-section fp-table" data-anchor="page1">
             <h2>爱你所爱</h2>
         </div>
 
@@ -123,6 +130,7 @@
             $('#fullpage').fullpage({
                 // 导航
                 menu: '#menu',
+                resize: true,
                 lockAnchors: false,
                 anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],    // 定义要在每个部分的URL上显示的锚链接（#example）
                 navigation: true,   // true时显示小圆圈导航栏
@@ -135,7 +143,7 @@
                 // 滚动
                 css3: true,
                 scrollingSpeed: 700,
-                autoScrolling: true,
+                autoScrolling: true,    // 是否使用插件自带的滚动方式
                 fitToSection: true,    // 确定是否节放入视口中。 当设置为true时，当前活动节将始终填充整个视口。 否则，用户可以自由地停留在一个节的中间（何时）
                 fitToSectionDelay: 1000,
                 scrollBar: false,
@@ -162,7 +170,7 @@
                 //可访问
                 keyboardScrolling: true,
                 animateAnchor: true,
-                recordHistory: true,
+                recordHistory: false,    // 前进后退进行页面切换  
                 
                 // 设计
                 fixedElements: '#head',
