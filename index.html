@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keywords" content="web前端 个人简历 心情分享">
+<meta name="description" content="zzw的个人web简历">
+<title>zzw的个人简历</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+<link rel="stylesheet" href="./jquery.fullPage.css">
+<link rel="stylesheet" href="./index.css">
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+<style>
+    .section {
+        text-align: center;
+    }
+    .section1 {
+        background: url(./imgs/背景1.jpg) no-repeat;
+        /* background-size:  */
+    }
+    .section2 {
+        background: url(./imgs/背景2.jpg) no-repeat;
+    }
+    .section3 {
+        background: url(./imgs/背景3.jpg) no-repeat;
+    }
+    .section4 {
+        background: url(./imgs/背景4.jpg) no-repeat;
+    }
+    .section5 {
+        background: url(./imgs/背景5.jpg) no-repeat;
+    }
+    .section6 {
+        background: url(./imgs/背景6.jpg) no-repeat;
+    }
+
+</style>
+<!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body style="overflow: hidden; height: 100%;">
+    <!-- 头部导航栏 -->
+    <header id="head">
+        <div class="head-left">
+            <img src="./imgs/head.png" id="head-logo" alt="头像">
+            <div class="head-tit">
+                <span>zzw</span>
+            </div>
+        </div>
+        <div class="head-right">
+            
+        </div>
+    </header>
+    <!-- 主要内容 -->
+    <div id="fullpage" class="fullpage-wrapper" style="height: 100%; position: relative; transform: translate3d(0px, 0px, 0px); transition: all 700ms ease">
+        <!-- 第一屏 首页 -->
+        <div class="section section1 fp-section fp-table fp-auto-height-responsive" data-anchor="page1">
+            <h2>爱你所爱</h2>
+        </div>
+
+        <!-- 第二屏 个人信息-->
+        <div class="section section2 fp-section fp-table" data-anchor="page2">
+            <h2>行你所行</h2>
+        </div>
+
+        <!-- 第三屏 个人简介-->
+        <div class="section section3 fp-section fp-table" data-anchor="page3">
+            <h2>听从内心</h2>
+        </div>
+
+        <!-- 第四屏 专业技能-->
+        <div class="section section4 fp-section fp-table" data-anchor="page4">
+            <h2>无问西东</h2>
+        </div>
+
+        <!-- 第五屏 经历以及作品-->
+        <div class="section section5 fp-section fp-table" data-anchor="page5">
+            <div class="slide" data-anchor="slide-page1">
+                <h2>啦啦啦</h2>
+            </div>
+            <div class="slide" data-anchor="slide-page2">
+                <h2>嘻嘻嘻</h2>
+            </div>
+            <div class="slide" data-anchor="slide-page3">
+                <h2>哈哈哈</h2>
+            </div>
+        </div>
+
+        <!-- 第六屏 联系方式-->
+        <div class="section section6 fp-section fp-table" data-anchor="page6">
+            <!-- <h2>其他信息</h2> -->
+            <footer>
+                <p id="icp">
+                    Copyright©️ 
+                    <script>
+                        fn = new Date();
+                        document.write('&nbsp;' + fn.getFullYear() + '&nbsp;');
+                    </script>
+                <a href="http://www.miibeian.gov.cn">渝ICP备18006689号</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+    <!-- <aside class="right" id="fp-nav" style="margin-top: -60px">
+
+    </aside> -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="./jquery.fullPage.min.js"></script>
+<script src="https://cdn.staticfile.org/fullPage.js/3.0.2/vendors/easings.js"></script>
+<script src="https://cdn.staticfile.org/move.js/0.5.0/move.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <!-- 侧边导航栏 -->
+
+    <script>
+        // $(function () {
+        //     $('#fullpage').fullpage({
+        //         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90', '#66ccff']
+        //     }); // 激活fullpage
+        // })
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                // 导航
+                menu: '#menu',
+                lockAnchors: false,
+                anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],    // 定义要在每个部分的URL上显示的锚链接（#example）
+                navigation: true,   // true时显示小圆圈导航栏
+                navigationPosition: 'right',    // 定义导航栏位置
+                navigationTooltips: ['首页', '个人信息', '简介', '技能', '经历', '其他信息'],
+                showActiveTooltip: true,
+                slidesNavigation: true,     // 横向滚动导航栏
+                slidesNavPosition: 'bottom',
+
+                // 滚动
+                css3: true,
+                scrollingSpeed: 700,
+                autoScrolling: true,
+                fitToSection: true,    // 确定是否节放入视口中。 当设置为true时，当前活动节将始终填充整个视口。 否则，用户可以自由地停留在一个节的中间（何时）
+                fitToSectionDelay: 1000,
+                scrollBar: false,
+	            easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                loopBottom: false,
+	            loopTop: false,
+                loopHorizontal: true,
+                continuousVertical: false,
+	            continuousHorizontal: false,
+	            scrollHorizontally: false,
+                interlockedSlides: false,
+                dragAndMove: false,
+	            offsetSections: false,
+	            resetSliders: false,
+                fadingEffect: false,
+                scrollOverflow: false,
+                scrollOverflowReset: false,
+                scrollOverflowOptions: null,
+                touchSensitivity: 15,
+                normalScrollElementTouchThreshold: 5,
+                bigSectionsDestination: null,
+
+                //可访问
+                keyboardScrolling: true,
+                animateAnchor: true,
+                recordHistory: true,
+                
+                // 设计
+                fixedElements: '#head',
+                controlArrows: false,  // （默认为 true）确定是否将幻灯片的控制箭头向右或向左移动。
+                verticalCentered: true,
+                paddingTop: '1em',
+                paddingBottom: '10px',
+                responsiveWidth: 0,
+                responsiveHeight: 0,
+                responsiveSlides: false,
+                parallax: false,
+                parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+
+                // 懒加载
+                lazyLoading: true,
+
+                // 事件
+
+            })
+        })
+    </script>
+</body>
+</html>
