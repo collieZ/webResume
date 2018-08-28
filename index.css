@@ -12,7 +12,7 @@ header {
     left: 0;
     width: 100%;
     border-bottom: 1px solid #e8e8e8;
-    background-color: #eee8e1a9;
+    background-color: #d5e4e6a9;
     opacity: 0.8;
     padding: 10px 20px;
     z-index: 2;
@@ -29,7 +29,7 @@ header {
 
     float: right;
     margin: 10px 30px 10px 10px;
-    /* font-size: 14px; */
+    font-size: 14px;
 }
 
 .head-right ul li {
@@ -43,6 +43,12 @@ header {
 .head-right a {
     text-decoration: none;
     color: #575737e5;
+}
+
+.head-right a:hover {
+
+    font-weight: 700;
+    color: #70531ee5;
 }
 
 #head-logo {

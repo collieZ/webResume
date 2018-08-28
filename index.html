@@ -7,18 +7,110 @@
 <meta name="keywords" content="web前端 个人简历 心情分享">
 <meta name="description" content="zzw的个人web简历">
 <title>zzw的个人简历</title>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./jquery.fullPage.css">
 <link rel="stylesheet" href="./index.css">
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 <style>
+    #loding {
+
+        background-color: rgb(30, 247, 229);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 101;
+        top: 0;
+    }
+
+    #loding-center {
+
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    #loding-center-absolute {
+
+        position: absolute;
+        width: 100px;
+        height: 20px;
+        left: 50%;
+        top: 50%;
+        margin-top: -10px;
+        margin-left: -50px;
+    }
+
+    .circular {
+
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        -moz-border-radius: 50% 50% 50% 50%;
+        -webkit-border-radius: 50% 50% 50% 50%;
+        border-radius: 50% 50% 50% 50%;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        position: absolute;
+    }
+
+    #circular_one {
+
+        -webkit-animation: circular 2s linear infinite;
+        animation: circular 2s linear infinite;
+    }
+
+    #circular_two {
+
+        -webkit-animation: circular 2s linear infinite -.4s;
+        animation: circular 2s linear infinite -.4s;
+    }
+
+    #circular_three {
+
+        -webkit-animation: circular 2s linear infinite -.8s;
+        animation: circular 2s linear infinite -.8s;
+    }
+
+    #circular_four {
+
+        -webkit-animation: circular 2s linear infinite -1.2s;
+        animation: circular 2s linear infinite -1.2s;
+    }
+
+    #circular_five {
+
+        -webkit-animation: circular 2s linear infinite -1.6s;
+        animation: circular 2s linear infinite -1.6s;
+    }
+
+    @-webkit-keyframes circular {
+
+        0% { left: 100px; top:0}
+        80% { left: 0; top:0;}
+        85% { left: 0; top: -20px; width: 20px; height: 20px;}
+        90% { width: 40px; height: 15px; }
+        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
+        100% { left: 100px; top:0; }	
+    }
+
+    @keyframes circular {
+
+        0% { left: 100px; top:0}
+        80% { left: 0; top:0;}
+        85% { left: 0; top: -20px; width: 20px; height: 20px;}
+        90% { width: 40px; height: 15px; }
+        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
+        100% { left: 100px; top:0; }	
+    }
+ 
+    /* background-image load wait for optimization */
     .section {
         text-align: center;
     }
     .section1 {
         background: url(./imgs/背景1.jpg) no-repeat;
-        /* background-size:  */
     }
     .section2 {
         background: url(./imgs/背景2.jpg) no-repeat;
@@ -35,11 +127,36 @@
     .section6 {
         background: url(./imgs/背景6.jpg) no-repeat;
     }
-
 </style>
-<!-- <link rel="stylesheet" href="style.css"> -->
+<!--[if IE]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<![endif]-->
+<script>
+    if (window.onload == null) {
+            window.onload = function () {
+                setTimeout(() => {
+                    $('#loding').hide(1000);
+                }, 1500);
+            }
+        } else {
+            console.log('xixi');
+        }
+</script>
 </head>
 <body style="overflow: hidden; height: 100%;">
+    <!-- loding界面 -->
+    <div id="loding">
+        <div id="loding-center">
+            <div id="loding-center-absolute">
+                <div class="circular" id="circular_one"></div>
+                <div class="circular" id="circular_two" style="left: 20px;"></div>
+                <div class="circular" id="circular_three" style="left: 40px;"></div>
+                <div class="circular" id="circular_four" style="left: 60px;"></div>
+                <div class="circular" id="circular_five" style="left: 80px;"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- 头部导航栏 -->
     <header id="head">
         <div class="head-left">
@@ -55,7 +172,7 @@
                 <li data-menuanchor="page3"><a href="#page3">简介</a></li>
                 <li data-menuanchor="page4"><a href="#page4">技能树</a></li>
                 <li data-menuanchor="page5"><a href="#page5">爬坑之旅</a></li>
-                <li data-menuanchor="page6"><a href="#page6">约我吗</a></li>
+                <li data-menuanchor="page6"><a href="#page6">Pick Me</a></li>
             </ul>
         </div>
     </header>
@@ -112,7 +229,6 @@
     <!-- <aside class="right" id="fp-nav" style="margin-top: -60px">
 
     </aside> -->
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="./jquery.fullPage.min.js"></script>
 <script src="https://cdn.staticfile.org/fullPage.js/3.0.2/vendors/easings.js"></script>
 <script src="https://cdn.staticfile.org/move.js/0.5.0/move.js"></script>
@@ -121,11 +237,6 @@
     <!-- 侧边导航栏 -->
 
     <script>
-        // $(function () {
-        //     $('#fullpage').fullpage({
-        //         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90', '#66ccff']
-        //     }); // 激活fullpage
-        // })
         $(document).ready(function () {
             $('#fullpage').fullpage({
                 // 导航
@@ -190,6 +301,14 @@
                 // 事件
 
             })
+        })
+    </script>
+    <script>
+        $(function () {
+
+            $('#loding-center-absolute').click(function () {
+                $('#loding').hide();
+            });
         })
     </script>
 </body>
