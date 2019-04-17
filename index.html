@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="keywords" content="web前端 个人简历 心情分享">
-<meta name="description" content="zzw的个人web简历">
-<title>zzw的个人简历</title>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./CSS/jquery.fullPage.css">
-<link rel="stylesheet" href="./index.css">
-<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-<style>
-    #loding {
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="web前端 个人简历 心情分享" />
+    <meta name="description" content="吾家小居" />
+    <title>吾家小居</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/jquery.fullPage.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+      #loding {
         background-color: rgb(30, 247, 229);
         width: 100%;
         height: 100%;
         position: fixed;
         z-index: 101;
         top: 0;
-    }
+      }
 
-    #loding-center {
-
+      #loding-center {
         position: relative;
         height: 100%;
         width: 100%;
-    }
+      }
 
-    #loding-center-absolute {
-
+      #loding-center-absolute {
         position: absolute;
         width: 100px;
         height: 20px;
@@ -40,10 +43,9 @@
         top: 50%;
         margin-top: -10px;
         margin-left: -50px;
-    }
+      }
 
-    .circular {
-
+      .circular {
         width: 20px;
         height: 20px;
         background-color: #fff;
@@ -53,262 +55,312 @@
         margin-right: 20px;
         margin-bottom: 20px;
         position: absolute;
-    }
+      }
 
-    #circular_one {
-
+      #circular_one {
         -webkit-animation: circular 2s linear infinite;
         animation: circular 2s linear infinite;
-    }
+      }
 
-    #circular_two {
+      #circular_two {
+        -webkit-animation: circular 2s linear infinite -0.4s;
+        animation: circular 2s linear infinite -0.4s;
+      }
 
-        -webkit-animation: circular 2s linear infinite -.4s;
-        animation: circular 2s linear infinite -.4s;
-    }
+      #circular_three {
+        -webkit-animation: circular 2s linear infinite -0.8s;
+        animation: circular 2s linear infinite -0.8s;
+      }
 
-    #circular_three {
-
-        -webkit-animation: circular 2s linear infinite -.8s;
-        animation: circular 2s linear infinite -.8s;
-    }
-
-    #circular_four {
-
+      #circular_four {
         -webkit-animation: circular 2s linear infinite -1.2s;
         animation: circular 2s linear infinite -1.2s;
-    }
+      }
 
-    #circular_five {
-
+      #circular_five {
         -webkit-animation: circular 2s linear infinite -1.6s;
         animation: circular 2s linear infinite -1.6s;
-    }
+      }
 
-    @-webkit-keyframes circular {
-
-        0% { left: 100px; top:0}
-        80% { left: 0; top:0;}
-        85% { left: 0; top: -20px; width: 20px; height: 20px;}
-        90% { width: 40px; height: 15px; }
-        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
-        100% { left: 100px; top:0; }	
-    }
-
-    @keyframes circular {
-
-        0% { left: 100px; top:0}
-        80% { left: 0; top:0;}
-        85% { left: 0; top: -20px; width: 20px; height: 20px;}
-        90% { width: 40px; height: 15px; }
-        95% { left: 100px; top: -20px; width: 20px; height: 20px;}
-        100% { left: 100px; top:0; }	
-    }
- 
-    /* background-image load wait for optimization */
-    .section {
-        text-align: center;
-    }
-    .section1 {
-        background: url(./imgs/背景1.jpeg) no-repeat;
-    }
-    .section2 {
-        background: url(./imgs/背景2.jpeg) no-repeat;
-    }
-    .section3 {
-        background: url(./imgs/背景3.jpeg) no-repeat;
-    }
-    .section4 {
-        background: url(./imgs/背景4.jpeg) no-repeat;
-    }
-    .section5 {
-        background: url(./imgs/背景5.jpeg) no-repeat;
-    }
-    .section6 {
-        background: url(./imgs/背景6.jpeg) no-repeat;
-    }
-</style>
-<!--[if IE]>
-    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<![endif]-->
-<script>
-    if (window.onload == null) {
-            window.onload = function () {
-                setTimeout(() => {
-                    $('#loding').hide(1000);
-                }, 1000);
-            }
-        } else {
-            console.log('xixi');
+      @-webkit-keyframes circular {
+        0% {
+          left: 100px;
+          top: 0;
         }
-</script>
-</head>
-<body style="overflow: hidden; height: 100%;">
+        80% {
+          left: 0;
+          top: 0;
+        }
+        85% {
+          left: 0;
+          top: -20px;
+          width: 20px;
+          height: 20px;
+        }
+        90% {
+          width: 40px;
+          height: 15px;
+        }
+        95% {
+          left: 100px;
+          top: -20px;
+          width: 20px;
+          height: 20px;
+        }
+        100% {
+          left: 100px;
+          top: 0;
+        }
+      }
+
+      @keyframes circular {
+        0% {
+          left: 100px;
+          top: 0;
+        }
+        80% {
+          left: 0;
+          top: 0;
+        }
+        85% {
+          left: 0;
+          top: -20px;
+          width: 20px;
+          height: 20px;
+        }
+        90% {
+          width: 40px;
+          height: 15px;
+        }
+        95% {
+          left: 100px;
+          top: -20px;
+          width: 20px;
+          height: 20px;
+        }
+        100% {
+          left: 100px;
+          top: 0;
+        }
+      }
+
+      /* background-image load wait for optimization */
+      .section {
+        text-align: center;
+      }
+      .section1 {
+        background: url(./imgs/背景1.jpeg) no-repeat;
+      }
+      .section2 {
+        background: url(./imgs/背景2.jpeg) no-repeat;
+      }
+      .section3 {
+        background: url(./imgs/背景3.jpeg) no-repeat;
+      }
+      .section4 {
+        background: url(./imgs/背景4.jpeg) no-repeat;
+      }
+      .section5 {
+        background: url(./imgs/背景5.jpeg) no-repeat;
+      }
+      .section6 {
+        background: url(./imgs/背景6.jpeg) no-repeat;
+      }
+    </style>
+    <!--[if IE]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>
+      if (window.onload == null) {
+        window.onload = function() {
+          setTimeout(() => {
+            $('#loding').hide(1000)
+          }, 1000)
+        }
+      } else {
+        console.log('xixi')
+      }
+    </script>
+  </head>
+  <body style="overflow: hidden; height: 100%;">
     <!-- loding界面 -->
     <div id="loding">
-        <div id="loding-center">
-            <div id="loding-center-absolute">
-                <div class="circular" id="circular_one"></div>
-                <div class="circular" id="circular_two" style="left: 20px;"></div>
-                <div class="circular" id="circular_three" style="left: 40px;"></div>
-                <div class="circular" id="circular_four" style="left: 60px;"></div>
-                <div class="circular" id="circular_five" style="left: 80px;"></div>
-            </div>
+      <div id="loding-center">
+        <div id="loding-center-absolute">
+          <div class="circular" id="circular_one"></div>
+          <div class="circular" id="circular_two" style="left: 20px;"></div>
+          <div class="circular" id="circular_three" style="left: 40px;"></div>
+          <div class="circular" id="circular_four" style="left: 60px;"></div>
+          <div class="circular" id="circular_five" style="left: 80px;"></div>
         </div>
+      </div>
     </div>
 
     <!-- 头部导航栏 -->
     <header id="head">
-        <div class="head-left">
-            <img src="./imgs/head.jpeg" id="head-logo" alt="头像">
-            <div class="head-tit">
-                <span>zzw</span>
-            </div>
+      <div class="head-left">
+        <img src="./imgs/head.jpeg" id="head-logo" alt="头像" />
+        <div class="head-tit">
+          <span>zzw</span>
         </div>
-        <div class="head-right">
-            <ul id="menu">
-                <li data-menuanchor="page1"><a href="#page1">首页</a></li>
-                <li data-menuanchor="page2"><a href="#page2">个人信息</a></li>
-                <li data-menuanchor="page3"><a href="#page3">简介</a></li>
-                <li data-menuanchor="page4"><a href="#page4">技能树</a></li>
-                <li data-menuanchor="page5"><a href="#page5">爬坑之旅</a></li>
-                <li data-menuanchor="page6"><a href="#page6">Pick Me</a></li>
-            </ul>
-        </div>
+      </div>
+      <div class="head-right">
+        <ul id="menu">
+          <li data-menuanchor="page1"><a href="#page1">首页</a></li>
+          <li data-menuanchor="page2"><a href="#page2">个人信息</a></li>
+          <li data-menuanchor="page3"><a href="#page3">简介</a></li>
+          <li data-menuanchor="page4"><a href="#page4">技能树</a></li>
+          <li data-menuanchor="page5"><a href="#page5">爬坑之旅</a></li>
+          <li data-menuanchor="page6"><a href="#page6">Pick Me</a></li>
+        </ul>
+      </div>
     </header>
     <!-- 主要内容 -->
-    <div id="fullpage" class="fullpage-wrapper" style="height: 100%; position: relative; transform: translate3d(0px, 0px, 0px); transition: all 700ms ease">
-        <!-- 第一屏 首页 -->
-        <div class="section section1 fp-section fp-table" data-anchor="page1">
-            <h2>爱你所爱</h2>
-        </div>
+    <div
+      id="fullpage"
+      class="fullpage-wrapper"
+      style="height: 100%; position: relative; transform: translate3d(0px, 0px, 0px); transition: all 700ms ease"
+    >
+      <!-- 第一屏 首页 -->
+      <div class="section section1 fp-section fp-table" data-anchor="page1">
+        <h2>爱你所爱</h2>
+      </div>
 
-        <!-- 第二屏 个人信息-->
-        <div class="section section2 fp-section fp-table" data-anchor="page2">
-            <h2>行你所行</h2>
-        </div>
+      <!-- 第二屏 个人信息-->
+      <div class="section section2 fp-section fp-table" data-anchor="page2">
+        <h2>行你所行</h2>
+      </div>
 
-        <!-- 第三屏 个人简介-->
-        <div class="section section3 fp-section fp-table" data-anchor="page3">
-            <h2>听从内心</h2>
-        </div>
+      <!-- 第三屏 个人简介-->
+      <div class="section section3 fp-section fp-table" data-anchor="page3">
+        <h2>听从内心</h2>
+      </div>
 
-        <!-- 第四屏 专业技能-->
-        <div class="section section4 fp-section fp-table" data-anchor="page4">
-            <h2>无问西东</h2>
-        </div>
+      <!-- 第四屏 专业技能-->
+      <div class="section section4 fp-section fp-table" data-anchor="page4">
+        <h2>无问西东</h2>
+      </div>
 
-        <!-- 第五屏 经历以及作品-->
-        <div class="section section5 fp-section fp-table" data-anchor="page5">
-            <div class="slide" data-anchor="slide-page1">
-                <h2>啦啦啦</h2>
-            </div>
-            <div class="slide" data-anchor="slide-page2">
-                <h2>嘻嘻嘻</h2>
-            </div>
-            <div class="slide" data-anchor="slide-page3">
-                <h2>哈哈哈</h2>
-            </div>
+      <!-- 第五屏 经历以及作品-->
+      <div class="section section5 fp-section fp-table" data-anchor="page5">
+        <div class="slide" data-anchor="slide-page1">
+          <h2>啦啦啦</h2>
         </div>
+        <div class="slide" data-anchor="slide-page2">
+          <h2>嘻嘻嘻</h2>
+        </div>
+        <div class="slide" data-anchor="slide-page3">
+          <h2>哈哈哈</h2>
+        </div>
+      </div>
 
-        <!-- 第六屏 联系方式-->
-        <div class="section section6 fp-section fp-table" data-anchor="page6">
-            <!-- <h2>其他信息</h2> -->
-            <footer>
-                <p id="icp">
-                    Copyright©️ 
-                    <script>
-                        fn = new Date();
-                        document.write('&nbsp;' + fn.getFullYear() + '&nbsp;');
-                    </script>
-                <a href="http://www.miibeian.gov.cn">渝ICP备18006689号</a>
-                </p>
-            </footer>
-        </div>
+      <!-- 第六屏 联系方式-->
+      <div class="section section6 fp-section fp-table" data-anchor="page6">
+        <!-- <h2>其他信息</h2> -->
+        <footer>
+          <p id="icp">
+            Copyright©️
+            <script>
+              fn = new Date()
+              document.write('&nbsp;' + fn.getFullYear() + '&nbsp;')
+            </script>
+            <a href="http://www.miibeian.gov.cn">渝ICP备19004556号</a>
+          </p>
+        </footer>
+      </div>
     </div>
     <!-- <aside class="right" id="fp-nav" style="margin-top: -60px">
 
     </aside> -->
-<script src="./JS/jquery.fullPage.min.js"></script>
-<script src="https://cdn.staticfile.org/fullPage.js/3.0.2/vendors/easings.js"></script>
-<script src="https://cdn.staticfile.org/move.js/0.5.0/move.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src="./JS/jquery.fullPage.min.js"></script>
+    <script src="https://cdn.staticfile.org/fullPage.js/3.0.2/vendors/easings.js"></script>
+    <script src="https://cdn.staticfile.org/move.js/0.5.0/move.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $('#fullpage').fullpage({
-                // 导航
-                menu: '#menu',
-                resize: true,
-                lockAnchors: false,
-                anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],    // 定义要在每个部分的URL上显示的锚链接（#example）
-                navigation: true,   // true时显示小圆圈导航栏
-                navigationPosition: 'right',    // 定义导航栏位置
-                navigationTooltips: ['首页', '个人信息', '简介', '技能', '经历', '其他信息'],
-                showActiveTooltip: true,
-                slidesNavigation: true,     // 横向滚动导航栏
-                slidesNavPosition: 'bottom',
+      $(document).ready(function() {
+        $('#fullpage').fullpage({
+          // 导航
+          menu: '#menu',
+          resize: true,
+          lockAnchors: false,
+          anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'], // 定义要在每个部分的URL上显示的锚链接（#example）
+          navigation: true, // true时显示小圆圈导航栏
+          navigationPosition: 'right', // 定义导航栏位置
+          navigationTooltips: [
+            '首页',
+            '个人信息',
+            '简介',
+            '技能',
+            '经历',
+            '其他信息'
+          ],
+          showActiveTooltip: true,
+          slidesNavigation: true, // 横向滚动导航栏
+          slidesNavPosition: 'bottom',
 
-                // 滚动
-                css3: true,
-                scrollingSpeed: 700,
-                autoScrolling: true,    // 是否使用插件自带的滚动方式
-                fitToSection: true,    // 确定是否节放入视口中。 当设置为true时，当前活动节将始终填充整个视口。 否则，用户可以自由地停留在一个节的中间（何时）
-                fitToSectionDelay: 1000,
-                scrollBar: false,
-	            easing: 'easeInOutCubic',
-                easingcss3: 'ease',
-                loopBottom: false,
-	            loopTop: false,
-                loopHorizontal: true,
-                continuousVertical: false,
-	            continuousHorizontal: false,
-	            scrollHorizontally: false,
-                interlockedSlides: false,
-                dragAndMove: false,
-	            offsetSections: false,
-	            resetSliders: false,
-                fadingEffect: false,
-                scrollOverflow: false,
-                scrollOverflowReset: false,
-                scrollOverflowOptions: null,
-                touchSensitivity: 15,
-                normalScrollElementTouchThreshold: 5,
-                bigSectionsDestination: null,
+          // 滚动
+          css3: true,
+          scrollingSpeed: 700,
+          autoScrolling: true, // 是否使用插件自带的滚动方式
+          fitToSection: true, // 确定是否节放入视口中。 当设置为true时，当前活动节将始终填充整个视口。 否则，用户可以自由地停留在一个节的中间（何时）
+          fitToSectionDelay: 1000,
+          scrollBar: false,
+          easing: 'easeInOutCubic',
+          easingcss3: 'ease',
+          loopBottom: false,
+          loopTop: false,
+          loopHorizontal: true,
+          continuousVertical: false,
+          continuousHorizontal: false,
+          scrollHorizontally: false,
+          interlockedSlides: false,
+          dragAndMove: false,
+          offsetSections: false,
+          resetSliders: false,
+          fadingEffect: false,
+          scrollOverflow: false,
+          scrollOverflowReset: false,
+          scrollOverflowOptions: null,
+          touchSensitivity: 15,
+          normalScrollElementTouchThreshold: 5,
+          bigSectionsDestination: null,
 
-                //可访问
-                keyboardScrolling: true,
-                animateAnchor: true,
-                recordHistory: false,    // 前进后退进行页面切换  
-                
-                // 设计
-                fixedElements: '#head',
-                controlArrows: false,  // （默认为 true）确定是否将幻灯片的控制箭头向右或向左移动。
-                verticalCentered: true,
-                paddingTop: '1em',
-                paddingBottom: '10px',
-                responsiveWidth: 0,
-                responsiveHeight: 0,
-                responsiveSlides: false,
-                parallax: false,
-                parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+          //可访问
+          keyboardScrolling: true,
+          animateAnchor: true,
+          recordHistory: false, // 前进后退进行页面切换
 
-                // 懒加载
-                lazyLoading: true,
+          // 设计
+          fixedElements: '#head',
+          controlArrows: false, // （默认为 true）确定是否将幻灯片的控制箭头向右或向左移动。
+          verticalCentered: true,
+          paddingTop: '1em',
+          paddingBottom: '10px',
+          responsiveWidth: 0,
+          responsiveHeight: 0,
+          responsiveSlides: false,
+          parallax: false,
+          parallaxOptions: {
+            type: 'reveal',
+            percentage: 62,
+            property: 'translate'
+          },
 
-                // 事件
+          // 懒加载
+          lazyLoading: true
 
-            })
+          // 事件
         })
+      })
     </script>
     <script>
-        $(function () {
-
-            $('#loding-center-absolute').click(function () {
-                $('#loding').hide();
-            });
+      $(function() {
+        $('#loding-center-absolute').click(function() {
+          $('#loding').hide()
         })
+      })
     </script>
-</body>
+  </body>
 </html>
